@@ -1,4 +1,4 @@
-import { Component, signal } from "@angular/core";
+import { ChangeDetectionStrategy, Component, signal } from "@angular/core";
 
 
 
@@ -11,13 +11,15 @@ styles: `
     margin: 10px;
     width: 75px;
   }
-`
+`,
 
 })
 export class CounterComponent {
 
   counter = 10;
   counterSignal = signal(10);
+
+  constructor() {}
 
   increaseBy(value: number) {
     this.counter += value;
