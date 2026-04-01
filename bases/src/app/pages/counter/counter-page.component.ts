@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, signal } from "@angular/core";
 
 
 
@@ -17,12 +17,15 @@ styles: `
 export class CounterComponent {
 
   counter = 10;
+  counterSignal = signal(10);
 
   increaseBy(value: number) {
     this.counter += value;
+    this.counterSignal.update( (current) => current + value );
   }
 
   resetcounter() {
     this.counter = 0;
+    this.counterSignal.set(0);
   }
 }
