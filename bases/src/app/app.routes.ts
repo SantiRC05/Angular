@@ -13,6 +13,11 @@ export const routes: Routes = [
 {
   path: '',
   component: CounterComponent
+},
+
+{
+  path: '**',
+  redirectTo: ''
 }
 
 ];
