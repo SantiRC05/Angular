@@ -12,11 +12,16 @@
     text-decoration: none;
   }
 
+  nav a.active {
+    color: #b3c400;
+  }
+
 </style>
 
 
 
 <nav>
-  <a routerLink="/">Contador</a>
-  <a routerLink="/hero">Hero</a>
+  <a routerLink="/" routerLinkActive="active"
+  [routerLinkActiveOptions]="{ exact: true}">Contador</a>
+  <a routerLink="/hero" routerLinkActive="active">Hero</a>
 </nav>
