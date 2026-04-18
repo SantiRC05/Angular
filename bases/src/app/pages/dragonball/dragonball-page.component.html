@@ -3,7 +3,7 @@
 
 <section class="row">
   <div class="col-12 col-sm-6">
-    <h3>Agregar Personaje: {{name ()}}</h3>
+    <h3>Agregar: {{name ()}}</h3>
 
 
     <input type="text"
@@ -15,9 +15,16 @@
     #txtName
     >
 
+    <input
+    type="number"
+    class="form-control mt-2"
+    placeholder="Poder"
+    [value]="power()"
+    (input)="power.set(+txtPower.value)"
+    #txtPower
+    >
 
-    <input type="number" class="form-control mt-2" placeholder="Poder">
-    <button class="mt-2 btn btn-primary">
+    <button (click)="addCharacter()" class="mt-2 btn btn-primary">
       Agregar
     </button>
   </div>
