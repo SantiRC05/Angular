@@ -20,7 +20,7 @@ export class DragonballSuperPageComponent {
 
   characters = signal<Character[]>([
     { id: 1, name: 'Goku', power: 9001 },
-    { id: 2, name: 'Vegeta', power: 8001 },
+    { id: 2, name: 'Vegeta', power: 8000 },
   ]);
 
 
