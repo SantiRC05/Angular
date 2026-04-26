@@ -1,7 +1,7 @@
 
 import { Component, signal } from "@angular/core";
 import { CharacterList } from "../../components/dragonball/character-list/character-list";
-import { CharacterAdd } from "../dragonball/character-app/character-add";
+import { CharacterAdd } from "../dragonball/character-add/character-add";
 
 interface Character {
   id: number;
@@ -26,5 +26,12 @@ export class DragonballSuperPageComponent {
     { id: 2, name: 'Vegeta', power: 8000 },
   ]);
 
+  addCharacter(newCharacter: Character) {
+    this.characters.update((list) => [...list, newCharacter]);
+  }
 
+  resetFields() {
+    this.name.set('');
+    this.power.set(0);
+  }
 }
