@@ -1,6 +1,16 @@
   import { effect, Injectable, signal } from '@angular/core';
   import { Character } from '../interfaces/character.interface';
 
+  function loadFormLocalStorage(): Character[] {
+    const characters = localStorage.getItem('characters');
+
+    return characters ? JSON.parse(characters) : [];
+
+
+
+    return[]
+  }
+
   @Injectable({providedIn: 'root'})
   export class DragonBallService {
 
